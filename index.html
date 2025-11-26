@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Piedra, Papel o Tijera</title>
+  <style>
+    :root { color-scheme: light dark; }
+    body { font-family: system-ui, sans-serif; margin: 0; padding: 24px; display: grid; place-items: center; }
+    .game { max-width: 640px; width: 100%; padding: 20px; border: 1px solid #ccc; border-radius: 12px; }
+    h1 { font-size: 1.5rem; margin: 0 0 12px; }
+    .score { display: flex; gap: 16px; margin-bottom: 16px; }
+    .score > div { padding: 8px 12px; border: 1px solid #ddd; border-radius: 8px; }
+    .choices { display: flex; gap: 12px; margin-bottom: 16px; }
+    button.choice { flex: 1; padding: 12px; font-size: 1rem; cursor: pointer; }
+    .result { min-height: 48px; margin-bottom: 12px; }
+    .log { font-family: ui-monospace, monospace; font-size: 0.95rem; white-space: pre-line; border-top: 1px dashed #ccc; padding-top: 12px; max-height: 200px; overflow: auto; }
+    .reset { margin-top: 12px; }
+  </style>
+</head>
+<body>
+  <main class="game">
+    <h1>Piedra, Papel o Tijera</h1>
+
+    <section class="score" aria-label="Marcadores">
+      <div><strong>Jugador:</strong> <span id="playerScore">0</span></div>
+      <div><strong>CPU:</strong> <span id="cpuScore">0</span></div>
+      <div><strong>Rondas:</strong> <span id="rounds">0</span></div>
+    </section>
+
+    <section class="choices" aria-label="Elige tu jugada">
+      <button class="choice" data-move="piedra">🪨 Piedra</button>
+      <button class="choice" data-move="papel">📄 Papel</button>
+      <button class="choice" data-move="tijera">✂️ Tijera</button>
+    </section>
+
+    <section class="result" aria-live="polite">
+      <strong>Resultado:</strong> <span id="resultText">Haz tu jugada.</span>
+    </section>
+
+    <section class="last" aria-label="Última jugada">
+      <div><strong>Tú:</strong> <span id="playerMove">—</span></div>
+      <div><strong>CPU:</strong> <span id="cpuMove">—</span></div>
+    </section>
+
+    <section class="log" id="log" aria-label="Historial"></section>
+
+    <button class="reset" id="resetBtn">Reiniciar</button>
+  </main>
+<style>
+body {
+    background-color: rgb(103, 151, 99);   
+}    
+</style>
+
+  <script src="proyecto.js"></script>
+</body>
+</html>
